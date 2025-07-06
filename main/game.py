@@ -42,4 +42,28 @@ while True:
     print(choiceName, "vs", compChoiceName)
 
     #Determine the winner
-           
+    if choice == compChoice :
+        result = "DRAW"
+    elif (choice == 1 and compChoice == 2) or (compChoice == 1 and choice == 2):
+        result = "Paper"
+    elif (choice == 1 and compChoice == 3) or (compChoice == 1 and choice == 3):
+        result = "Rock"
+    elif (choice == 2 and compChoice == 3) or (compChoice == 2 and choice == 3):
+        result = "Scissors"            
+
+    #Print the Result.
+    if result == "DRAW":
+        print("<== It's a Draw ==>")
+    elif result == choiceName:
+        print("<== User Wins ==>")
+    else:
+        print("<== Computer Wins ==>")            
+
+    #Ask if the User wants to play again
+    print("Do you want to play again? (Y/N)")
+    answer = input().lower()
+    if answer == "n":    
+        break
+
+#After coming out of while loop, greet the user
+print("Thanks for playing!")    
